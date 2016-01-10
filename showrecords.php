@@ -13,7 +13,8 @@ if (!$conn) {
 }
 // echo "Connected successfully ";
 
-echo "<button style='font-size: 24px;' href=\"index\">Go back to add more activity</button><br>";
+echo "<form action=\"http://rufuspp.azurewebsites.net\">
+    <input type=\"submit\" value=\"Go back to add more Rufus Activity\" style='font-size: 24px;'></form>";
 $time= new DateTime();
 $time->sub(new DateInterval('P'.$_GET['days'].'D'));
 $time=$time->format('Y-m-d H:i:s');
