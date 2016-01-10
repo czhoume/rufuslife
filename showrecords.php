@@ -17,6 +17,7 @@ if (!$conn) {
 $time= new DateTime();
 $time->sub(new DateInterval('P'.$_GET['days'].'D'));
 $time=$time->format('Y-m-d H:i:s');
+echo $time;
 // $time=date('Y-m-d H:i:s', time());
 $sql = "SELECT Time, description FROM pprecords LEFT JOIN ppcategory on pprecords.descriptionid= ppcategory.descriptionid WHERE Time > $time";
 $result = mysqli_query($conn, $sql);
