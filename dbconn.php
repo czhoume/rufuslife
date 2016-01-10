@@ -17,6 +17,7 @@ if (!$conn) {
 $id=$_POST['act'];
 $time= new DateTime();
 $time->sub(new DateInterval('PT'.$_POST['delay'].'M'));
+$time=$time->format('Y-m-d H:i:s');
 $sql = "SELECT description FROM ppcategory WHERE descriptionid = $id";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
