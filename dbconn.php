@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 } 
 echo "Connected successfully";
 
-$time= date('m/d/Y h:i:s a', time());
+$time= date('Y-m-d h:i:s', time());
 $id=1;
 
 $sql = "INSERT INTO 'pprecords' (Time, descriptionid, delta)
