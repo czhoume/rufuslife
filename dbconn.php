@@ -18,15 +18,15 @@ echo "Connected successfully ";
 $id=1;
 $time= date('Y-m-d h:i:s', time());
 
-$sql1 = "SELECT description FROM ppcategory WHERE descriptionid = $id"
-echo $sql1;
-// $result = mysqli_query($conn, $sql);
-// if ($mysqli_num_rows($result) > 0) {
-//     $row = mysqli_fetch_assoc($result);
-//     echo $row["description"];
-// } else {
-//     echo "invalid activity";
-// }
+$sql = "SELECT description FROM ppcategory WHERE descriptionid = $id";
+echo $sql;
+$result = mysqli_query($conn, $sql);
+if ($mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    echo $row["description"];
+} else {
+    echo "invalid activity";
+}
 
 $sql = "INSERT INTO pprecords (Time, descriptionid, delta)
 VALUES ('$time', '$id', '0')";
