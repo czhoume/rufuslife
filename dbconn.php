@@ -16,7 +16,7 @@ echo "Connected successfully";
 $time= date('Y-m-d h:i:s', time());
 $id=1;
 
-$sql = "INSERT INTO 'pprecords' ('Time', 'descriptionid', 'delta')
+$sql = "INSERT INTO pprecords (Time, descriptionid, delta)
 VALUES ('$time', '$id', '0')";
 
 if (mysqli_query($conn, $sql)) {
