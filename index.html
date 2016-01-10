@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+ function updatedb () {
+      $.ajax({
+        url:"test.php", //the page containing php script
+        type: "POST", //request type
+        success:function(result){
+         alert(result);
+       }
+     });
+ }
+ </script>
    <head>
       <title>Status</title>
       <style type="text/css">
@@ -18,17 +30,18 @@
 <h1>Last Rufus Activity: </h1>
 <br>
 <form>
-<button type=button class=btn onClick="#dbconn.php">Feed</button>
-<button type=button class=btn onClick="#dbconn.php">Drink</button>
-<button type=button class=btn onClick="#dbconn.php">Sleep</button>
-<button type=button class=btn onClick="#dbconn.php">Pee Outdoor</button>
-<button type=button class=btn onClick="#dbconn.php">Poop Outdoor</button>
-<button type=button class=btn onClick="#dbconn.php">Pee Inside Cube on Pad</button>
-<button type=button class=btn onClick="#dbconn.php">Poop Inside Cube on Pad</button>
-<button type=button class=btn onClick="#dbconn.php">Pee Inside Cube Not on Pad</button>
-<button type=button class=btn onClick="#dbconn.php">Poop Inside Cube Not on Pad</button>
-<button type=button class=btn onClick="#dbconn.php">Pee Outside Cube Indoor</button>
-<button type=button class=btn onClick="#dbconn.php">Poop Outside Cube Indoor</button>
+<button type=button class=btn onClick="updatedb()">Feed</button>
+<button type=button class=btn onClick="updatedb()">Drink</button>
+<button type=button class=btn onClick="updatedb()">Sleep</button>
+<button type=button class=btn onClick="updatedb()">Pee Outdoor</button>
+<button type=button class=btn onClick="updatedb()">Poop Outdoor</button>
+<button type=button class=btn onClick="updatedb()">Pee Inside Cube on Pad</button>
+<button type=button class=btn onClick="updatedb()">Poop Inside Cube on Pad</button>
+<button type=button class=btn onClick="updatedb()">Pee Inside Cube Not on Pad</button>
+<button type=button class=btn onClick="updatedb()">Poop Inside Cube Not on Pad</button>
+<button type=button class=btn onClick="updatedb()">Pee Outside Cube Indoor</button>
+<button type=button class=btn onClick="updatedb()">Poop Outside Cube Indoor</button>
 </form>
 </body>
+
 </html>
