@@ -2,13 +2,14 @@
 <html>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
- function updatedb (data) {
+ function updatedb (act, delay) {
  	
       $.ajax({
         url:"dbconn.php", //the page containing php script
         type: "POST", //request type
         data:{
-        	data1 : data
+        	act : act
+        	delay : delay
         },
         success:function(result){
          document.getElementById("activity").innerHTML = result;
@@ -33,17 +34,72 @@
 <div id="activity"><h1>Record Rufus' Activity</h1></div>
 
 <form>
-<br><button class=btn onClick="updatedb(1)">Feed</button> <button class=btn onClick="updatedb(1)">Feed</button>
-<br><button class=btn onClick="updatedb(2)">Drink</button> <button class=btn onClick="updatedb(2)">Drink</button>
-<br><button class=btn onClick="updatedb(3)">Sleep</button> <button class=btn onClick="updatedb(3)">Sleep</button>
-<br><button class=btn onClick="updatedb(4)">Pee Outdoor</button> <button class=btn onClick="updatedb(4)">Pee Outdoor</button>
-<br><button class=btn onClick="updatedb(5)">Poop Outdoor</button> <button class=btn onClick="updatedb(5)">Poop Outdoor</button>
-<br><button class=btn onClick="updatedb(6)">Pee Inside Cube on Pad</button> <button class=btn onClick="updatedb(6)">Pee Inside Cube on Pad</button>
-<br><button class=btn onClick="updatedb(7)">Poop Inside Cube on Pad</button> <button class=btn onClick="updatedb(7)">Poop Inside Cube on Pad</button>
-<br><button class=btn onClick="updatedb(8)">Pee Inside Cube Not on Pad</button> <button class=btn onClick="updatedb(8)">Pee Inside Cube Not on Pad</button>
-<br><button class=btn onClick="updatedb(9)">Poop Inside Cube Not on Pad</button> <button class=btn onClick="updatedb(9)">Poop Inside Cube Not on Pad</button>
-<br><button class=btn onClick="updatedb(10)">Pee Outside Cube Indoor</button> <button class=btn onClick="updatedb(10)">Pee Outside Cube Indoor</button>
-<br><button class=btn onClick="updatedb(11)">Poop Outside Cube Indoor</button> <button class=btn onClick="updatedb(11)">Poop Outside Cube Indoor</button>
+<br>
+<button class=btn onClick="updatedb(1,0)">Feed</button>
+<button class=btn onClick="updatedb(1,5)">-5</button>
+<button class=btn onClick="updatedb(1,10)">-10</button>
+<button class=btn onClick="updatedb(1,15)">-15</button>
+<button class=btn onClick="updatedb(1,20)">-20</button>
+<br>
+<button class=btn onClick="updatedb(2,0)">Drink</button>
+<button class=btn onClick="updatedb(2,5)">-5</button>
+<button class=btn onClick="updatedb(2,10)">-10</button>
+<button class=btn onClick="updatedb(2,15)">-15</button>
+<button class=btn onClick="updatedb(2,20)">-20</button>
+<br>
+<button class=btn onClick="updatedb(3,0)">Sleep</button>
+<button class=btn onClick="updatedb(3,5)">-5</button>
+<button class=btn onClick="updatedb(3,10)">-10</button>
+<button class=btn onClick="updatedb(3,15)">-15</button>
+<button class=btn onClick="updatedb(3,20)">-20</button>
+<br>
+<button class=btn onClick="updatedb(4,0)">Pee Outdoor</button>
+<button class=btn onClick="updatedb(4,5)">-5</button>
+<button class=btn onClick="updatedb(4,10)">-10</button>
+<button class=btn onClick="updatedb(4,15)">-15</button>
+<button class=btn onClick="updatedb(4,20)">-20</button>
+<br>
+<button class=btn onClick="updatedb(5,0)">Poop Outdoor</button>
+<button class=btn onClick="updatedb(5,5)">-5</button>
+<button class=btn onClick="updatedb(5,10)">-10</button>
+<button class=btn onClick="updatedb(5,15)">-15</button>
+<button class=btn onClick="updatedb(5,20)">-20</button>
+<br>
+<button class=btn onClick="updatedb(6,0)">Pee Inside Cube on Pad</button>
+<button class=btn onClick="updatedb(6,5)">-5</button>
+<button class=btn onClick="updatedb(6,10)">-10</button>
+<button class=btn onClick="updatedb(6,15)">-15</button>
+<button class=btn onClick="updatedb(6,20)">-20</button>
+<br>
+<button class=btn onClick="updatedb(7,0)">Poop Inside Cube on Pad</button>
+<button class=btn onClick="updatedb(7,5)">-5</button>
+<button class=btn onClick="updatedb(7,10)">-10</button>
+<button class=btn onClick="updatedb(7,15)">-15</button>
+<button class=btn onClick="updatedb(7,20)">-20</button>
+<br>
+<button class=btn onClick="updatedb(8,0)">Pee Inside Cube Not on Pad</button>
+<button class=btn onClick="updatedb(8,5)">-5</button>
+<button class=btn onClick="updatedb(8,10)">-10</button>
+<button class=btn onClick="updatedb(8,15)">-15</button>
+<button class=btn onClick="updatedb(8,20)">-20</button>
+<br>
+<button class=btn onClick="updatedb(9,0)">Poop Inside Cube Not on Pad</button>
+<button class=btn onClick="updatedb(9,5)">-5</button>
+<button class=btn onClick="updatedb(9,10)">-10</button>
+<button class=btn onClick="updatedb(9,15)">-15</button>
+<button class=btn onClick="updatedb(9,20)">-20</button>
+<br>
+<button class=btn onClick="updatedb(10,0)">Pee Outside Cube Indoor</button> 
+<button class=btn onClick="updatedb(10,5)">-5</button>
+<button class=btn onClick="updatedb(10,10)">-10</button>
+<button class=btn onClick="updatedb(10,15)">-15</button>
+<button class=btn onClick="updatedb(10,20)">-20</button>
+<br>
+<button class=btn onClick="updatedb(11,0)">Poop Outside Cube Indoor</button> 
+<button class=btn onClick="updatedb(11,5)">-5</button>
+<button class=btn onClick="updatedb(11,10)">-10</button>
+<button class=btn onClick="updatedb(11,15)">-15</button>
+<button class=btn onClick="updatedb(11,20)">-20</button>
 </form>
 </body>
 
