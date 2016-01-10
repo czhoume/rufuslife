@@ -24,20 +24,20 @@ if (mysqli_num_rows($result) > 0) {
 	echo "<table border=\"1\"><tr><th>Time</th><th>Activity</th></tr>";
     while($row = mysqli_fetch_assoc($result)) {
     	switch ($row["descriptionid"]) {
-    		case 10:
-    		case 11:
+    		case "10":
+    		case "11":
         		$bgc="red";
         		break;
-	    	case 8:
-	    	case 9:
+	    	case "8":
+	    	case "9":
 	        	$bgc="orangered";
 	        	break;
-	    	case 7:
-	    	case 6:
+	    	case "7":
+	    	case "6":
 	        	$bgc="yellow";
 	        	break;
-	        case 5:
-	        case 4:
+	        case "5":
+	        case "4":
 	        	$bgc="lightgreen"
 	    	default:
         		echo "white";
