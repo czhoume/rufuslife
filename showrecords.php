@@ -39,6 +39,7 @@ if (mysqli_num_rows($result) > 0) {
 	        case "poop outdoor":
 	        case "pee outdoor":
 	        	$bgc="lightgreen";
+	        	break;
 	    	default:
 	        	$bgc="white";
 		}
