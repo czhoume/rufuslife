@@ -23,7 +23,7 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
 	echo "<table border=\"1\"><tr><th>Time</th><th>Activity</th></tr>";
     while($row = mysqli_fetch_assoc($result)) {
-    	switch ($row["pprecords.descriptionid"]) {
+    	switch ($row["descriptionid"]) {
     		case 10:
     		case 11:
         		$bgc="red";
