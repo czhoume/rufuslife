@@ -17,7 +17,6 @@ if (!$conn) {
 $id=$_POST['act'];
 $time= new DateTime();
 $time->sub(new DateInterval('PT'.$_POST['delay'].'M'));
-echo $time;
 $time=$time->format('Y-m-d H:i:s');
 echo $time;
 $sql = "SELECT description FROM ppcategory WHERE descriptionid = $id";
