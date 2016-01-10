@@ -38,10 +38,10 @@ if (mysqli_num_rows($result) > 0) {
 	        	break;
 	        case "poop outdoor":
 	        case "pee outdoor":
-	        	$bgc="lightgreen"
+	        	$bgc="lightgreen";
 	    	default:
-        		echo "white";
-}
+	        	$bgc="white";
+		}
         echo "<tr bgcolor=".$bgc."><td>" . $row["Time"]. "</td><td>" . $row["description"]. "</td></tr>";
     }
 } else {
