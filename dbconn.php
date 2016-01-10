@@ -21,7 +21,7 @@ $sql = "SELECT description FROM ppcategory WHERE descriptionid = $id";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
-    echo "Last activity: ".$row["description"];
+    echo "<h1>Last activity: ".$row["description"];
 } else {
     echo "invalid activity";
 }
@@ -34,7 +34,7 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-echo " at $time";
+echo " at $time </h1>";
 mysqli_close($conn);
 
 ?>
