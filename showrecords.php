@@ -18,26 +18,26 @@ $time= new DateTime();
 $time->sub(new DateInterval('P'.$_GET['days'].'D'));
 $time=$time->format('Y-m-d H:i:s');
 // $time=date('Y-m-d H:i:s', time());
-$sql = "SELECT Time, description, pprecords.descriptionid FROM pprecords LEFT JOIN ppcategory on pprecords.descriptionid= ppcategory.descriptionid WHERE Time > '$time'";
+$sql = "SELECT Time, description FROM pprecords LEFT JOIN ppcategory on pprecords.descriptionid= ppcategory.descriptionid WHERE Time > '$time'";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
 	echo "<table border=\"1\"><tr><th>Time</th><th>Activity</th></tr>";
     while($row = mysqli_fetch_assoc($result)) {
-    	switch ($row["descriptionid"]) {
-    		case "10":
-    		case "11":
+    	switch ($row["description"]) {
+    		case "poop outside cube indoor":
+    		case "pee outside cube indoor":
         		$bgc="red";
         		break;
-	    	case "8":
-	    	case "9":
+	    	case "pee inside cube not on pad":
+	    	case "poop inside cube not on pad":
 	        	$bgc="orangered";
 	        	break;
-	    	case "7":
-	    	case "6":
+	    	case "poop inside cube on pad":
+	    	case "pee inside cube on pad":
 	        	$bgc="yellow";
 	        	break;
-	        case "5":
-	        case "4":
+	        case "poop outdoor":
+	        case "pee outdoor":
 	        	$bgc="lightgreen"
 	    	default:
         		echo "white";
