@@ -13,14 +13,26 @@ if (!$conn) {
 }
 echo "Connected successfully";
 
+$id=$_POST['data1']
 $time= date('Y-m-d h:i:s', time());
 $id=1;
+$act="";
+
+$sql = "SELECT description FROM ppcategory WHERE descriptionid = $id"
+$result = mysqli_query($conn, $sql);
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $act=$row['description'];
+    echo "</table>";
+} else {
+    echo "invalid activity";
+}
 
 $sql = "INSERT INTO pprecords (Time, descriptionid, delta)
 VALUES ('$time', '$id', '0')";
 
 if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+    echo "'$act at $time'";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
