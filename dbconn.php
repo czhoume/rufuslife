@@ -11,22 +11,20 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully";
+echo "Connected successfully ";
 
 
 $id=$_POST['data1'];
 $time= date('Y-m-d h:i:s', time());
-// $act="";
 
-// $sql = "SELECT description FROM ppcategory WHERE descriptionid = $id"
-// $result = mysqli_query($conn, $sql);
-// if ($result->num_rows > 0) {
-//     $row = $result->fetch_assoc();
-//     $act=$row['description'];
-//     echo "</table>";
-// } else {
-//     echo "invalid activity";
-// }
+$sql = "SELECT description FROM ppcategory WHERE descriptionid = $id"
+$result = mysqli_query($conn, $sql);
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    echo $row['description'];
+} else {
+    echo "invalid activity";
+}
 
 $sql = "INSERT INTO pprecords (Time, descriptionid, delta)
 VALUES ('$time', '$id', '0')";
