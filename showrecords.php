@@ -13,7 +13,7 @@ if (!$conn) {
 }
 // echo "Connected successfully ";
 
-echo "<button style='font-size: 24px;' href=\"\">Go back to add more activity</button>";
+echo "<button style='font-size: 24px;' href=\"\">Go back to add more activity</button><br>";
 $time= new DateTime();
 $time->sub(new DateInterval('P'.$_GET['days'].'D'));
 $time=$time->format('Y-m-d H:i:s');
