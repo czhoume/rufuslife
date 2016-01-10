@@ -18,6 +18,7 @@ $id=$_POST['data1'];
 $time= date('Y-m-d h:i:s', time());
 
 $sql = "SELECT description FROM ppcategory WHERE descriptionid = $id"
+echo $sql;
 $result = mysqli_query($conn, $sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
