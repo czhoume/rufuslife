@@ -11,7 +11,7 @@
         	data1 : data
         },
         success:function(result){
-         alert(result);
+         document.getElementById("activity").innerHTML = result;
        }
      });
  }
@@ -32,6 +32,7 @@
 <body>
 
 <h1>Last Rufus Activity: </h1>
+<div id="activity"><h2>Let AJAX change this text</h2></div>
 <br>
 <form>
 <button type=button class=btn onClick="updatedb('Feed')">Feed</button>
