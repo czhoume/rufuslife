@@ -13,8 +13,8 @@ if (!$conn) {
 }
 echo "Connected successfully";
 
-$id=2;
-// $id=$_POST['data1']
+
+$id=$_POST['data1']
 $time= date('Y-m-d h:i:s', time());
 // $act="";
 
