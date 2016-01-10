@@ -1,1 +1,1 @@
-<?php echo 'hello'; ?>
+<?php echo $_POST['data1']; ?>
