@@ -2,27 +2,29 @@
 $servername = "us-cdbr-azure-west-c.cloudapp.net";
 $username = "bb69c0b0ab48ed";
 $password = "d9346dec";
+$dbname = "pprecords";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 echo "Connected successfully";
 
 $time= date('Y-m-d h:i:s', time());
 $id=1;
 
-#$sql = "INSERT INTO 'pprecords' ('Time', 'descriptionid', 'delta')
-#VALUES ('$time', '$id', '0')";
-$sql="INSERT INTO 'pprecords' ('Time', 'descriptionid', 'delta') VALUES ('2016-01-09 08:46:23', '1', '0');";
+$sql = "INSERT INTO 'pprecords' ('Time', 'descriptionid', 'delta')
+VALUES ('$time', '$id', '0')";
 
-if ($conn->query($sql) === TRUE) {
+if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
+
+mysqli_close($conn);
 
 ?>
