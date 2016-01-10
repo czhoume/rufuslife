@@ -13,9 +13,10 @@ if (!$conn) {
 }
 echo "Connected successfully";
 
-$id=$_POST['data1']
+$id=2;
+// $id=$_POST['data1']
 $time= date('Y-m-d h:i:s', time());
-$act="";
+// $act="";
 
 // $sql = "SELECT description FROM ppcategory WHERE descriptionid = $id"
 // $result = mysqli_query($conn, $sql);
@@ -31,7 +32,7 @@ $sql = "INSERT INTO pprecords (Time, descriptionid, delta)
 VALUES ('$time', '$id', '0')";
 
 if (mysqli_query($conn, $sql)) {
-    echo "'$act at $time'";
+    echo "successfully inserted";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
