@@ -21,9 +21,9 @@ $time=$time->format('Y-m-d H:i:s');
 $sql = "SELECT Time, description FROM pprecords LEFT JOIN ppcategory on pprecords.descriptionid= ppcategory.descriptionid WHERE Time > '$time'";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
-	echo "<table border=\"1\"><tr><td>Time</td><td>Activity</td></tr>";
+	echo "<table border=\"1\"><tr><th>Time</th><th>Activity</th></tr>";
     while($row = mysqli_fetch_assoc($result)) {
-        echo "<tr>" . $row["Time"]. "</td><td>" . $row["description"]. "</td></tr>";
+        echo "<tr><td>" . $row["Time"]. "</td><td>" . $row["description"]. "</td></tr>";
     }
 } else {
     echo "invalid activity";
