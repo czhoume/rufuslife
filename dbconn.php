@@ -17,7 +17,7 @@ $id=1;
 
 #$sql = "INSERT INTO 'pprecords' ('Time', 'descriptionid', 'delta')
 #VALUES ('$time', '$id', '0')";
-$sql="INSERT INTO `pprecords` (`Time`, `descriptionid`, `delta`) VALUES ('2016-01-09 08:46:23', '1', '0')";
+$sql="INSERT INTO 'pprecords' ('Time', 'descriptionid', 'delta') VALUES ('2016-01-09 08:46:23', '1', '0')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
