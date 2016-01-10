@@ -6,11 +6,9 @@
       $.ajax({
         url:"test.php", //the page containing php script
         type: "POST", //request type
-        data:{
-        	data1 : $data
-        }
+        
         success:function(result){
-         alert(result);
+         alert(data);
        }
      });
  }
