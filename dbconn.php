@@ -2,7 +2,7 @@
 $servername = "us-cdbr-azure-west-c.cloudapp.net";
 $username = "bb69c0b0ab48ed";
 $password = "d9346dec";
-$dbname = "pprecords";
+$dbname = "rufuspprecords";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
