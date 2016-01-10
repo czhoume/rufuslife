@@ -3,12 +3,15 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
  function updatedb (data) {
+ 	
       $.ajax({
         url:"test.php", //the page containing php script
         type: "POST", //request type
-        
+        data:{
+        	data1 : data
+        },
         success:function(result){
-         alert(data);
+         alert(result);
        }
      });
  }
@@ -31,8 +34,8 @@
 <h1>Last Rufus Activity: </h1>
 <br>
 <form>
-<button type=button class=btn onClick="updatedb(Feed)">Feed</button>
-<button type=button class=btn onClick="updatedb(Drink)">Drink</button>
+<button type=button class=btn onClick="updatedb('Feed')">Feed</button>
+<button type=button class=btn onClick="updatedb('Drink')">Drink</button>
 <button type=button class=btn onClick="updatedb()">Sleep</button>
 <button type=button class=btn onClick="updatedb()">Pee Outdoor</button>
 <button type=button class=btn onClick="updatedb()">Poop Outdoor</button>
