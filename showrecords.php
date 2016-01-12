@@ -26,20 +26,26 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
     	switch ($row["description"]) {
     		case "poop outside cube indoor":
+    			$bgc="#ff0000";
+    			break;
     		case "pee outside cube indoor":
-        		$bgc="red";
+        		$bgc="#ff5050";
         		break;
 	    	case "pee inside cube not on pad":
 	    	case "poop inside cube not on pad":
 	        	$bgc="orangered";
 	        	break;
 	    	case "poop inside cube on pad":
+	    		$bgc="#ffcc00";
+	    		break;
 	    	case "pee inside cube on pad":
-	        	$bgc="yellow";
+	        	$bgc="#ffff00";
 	        	break;
 	        case "poop outdoor":
+	        	$bgc="#009933";
+	        	break;
 	        case "pee outdoor":
-	        	$bgc="lightgreen";
+	        	$bgc="#33cc33";
 	        	break;
 	    	default:
 	        	$bgc="white";
