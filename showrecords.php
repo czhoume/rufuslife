@@ -27,10 +27,10 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
     	switch ($row["description"]) {
     		case "poop outside cube indoor":
-    			$bgc="#ff0000";
+    			$bgc="red";
     			break;
     		case "pee outside cube indoor":
-        		$bgc="#ff5050";
+        		$bgc="red";
         		break;
 	    	case "pee inside cube not on pad":
 	    	case "poop inside cube not on pad":
