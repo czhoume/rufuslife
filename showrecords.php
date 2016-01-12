@@ -16,7 +16,8 @@ if (!$conn) {
 echo "<form action=\"http://rufuspp.azurewebsites.net\">
     <input type=\"submit\" value=\"Go back to add more Rufus Activity\" style='font-size: 24px;'></form>";
 $time= new DateTime();
-$time->sub(new DateInterval('P'.$_GET['days'].'D'));
+$days= ($_GET['days']==null)?1:$_GET['days'];
+$time->sub(new DateInterval('P'.$days.'D'));
 $time=$time->format('Y-m-d H:i:s');
 // $time=date('Y-m-d H:i:s', time());
 $sql = "SELECT Time, description FROM pprecords LEFT JOIN ppcategory on pprecords.descriptionid= ppcategory.descriptionid WHERE Time > '$time'";
