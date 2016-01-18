@@ -11,9 +11,9 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$time="2016-1-08 11:23:00";
+// $time="2016-1-08 11:23:00";
 echo "yay";
-$count=0;
+// $count=0;
 // $tab = array
 //   (
 //   array("Volvo",22,18,0),
