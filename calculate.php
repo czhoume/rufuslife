@@ -12,7 +12,7 @@
 //     die("Connection failed: " . mysqli_connect_error());
 // }
 // $time="2016-1-08 11:23:00";
-echo "yay";
+// echo "yay";
 // $count=0;
 // $tab = array
 //   (
