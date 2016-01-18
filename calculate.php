@@ -12,6 +12,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 $time="2016-1-08 11:23:00";
+echo "yay";
 $count=0;
 $tab = array
   (
@@ -20,18 +21,18 @@ $tab = array
   array("Saab",5,2,0),
   array("Land Rover",17,15,0)
   );
-$sql = "SELECT Time, description FROM pprecords LEFT JOIN ppcategory on pprecords.descriptionid= ppcategory.descriptionid WHERE Time > '$time'";
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0) {
-	echo "<table border=\"1\"><tr><th>Time</th><th>Activity</th></tr>";
-    while($row = mysqli_fetch_assoc($result)) {
-    	$tab[$count][0]=$row["Time"];
-    	$tab[$count][1]=$row["description"];
-    	$count++;
-    }
-} else {
-    echo "invalid activity";
-}
+// $sql = "SELECT Time, description FROM pprecords LEFT JOIN ppcategory on pprecords.descriptionid= ppcategory.descriptionid WHERE Time > '$time'";
+// $result = mysqli_query($conn, $sql);
+// if (mysqli_num_rows($result) > 0) {
+// 	echo "<table border=\"1\"><tr><th>Time</th><th>Activity</th></tr>";
+//     while($row = mysqli_fetch_assoc($result)) {
+//     	$tab[$count][0]=$row["Time"];
+//     	$tab[$count][1]=$row["description"];
+//     	$count++;
+//     }
+// } else {
+//     echo "invalid activity";
+// }
 
 
 
