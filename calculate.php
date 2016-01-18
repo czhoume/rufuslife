@@ -61,7 +61,7 @@ $count=0;
 // 	}
 // }
 
-echo "<table border=\"1\"><tr><th>Time</th><th>Activity</th><th>Delta</th><th>Deltatoactivity</th></tr>";
+//echo "<table border=\"1\"><tr><th>Time</th><th>Activity</th><th>Delta</th><th>Deltatoactivity</th></tr>";
 // for($i=0; $i<$count; $i++){
 //     	switch ($tab[$i][1]) {
 //     		case "poop outside cube indoor":
