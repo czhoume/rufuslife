@@ -37,18 +37,18 @@ for($i=0; i<count; i++){
 		if($lastpee==null)
 			$lastpee=$tab[i]["Time"];
 		else{
-			$tab[i]["delta"]=round(abs($strtotime($tab[i]["Time"]) - $strtotime($lastpee)) / 60,2)
+			$tab[i]["delta"]=round(abs($strtotime($tab[i]["Time"]) - $strtotime($lastpee)) / 60,2);
 			if($drink!=null)
-				$tab[i]["deltatoactivity"]=round(abs($strtotime($tab[i]["Time"]) - $strtotime($drink)) / 60,2)
+				$tab[i]["deltatoactivity"]=round(abs($strtotime($tab[i]["Time"]) - $strtotime($drink)) / 60,2);
 			$lastpee=$tab[i]["Time"];
 		}
 	}elseif(strpos($tab[i]["description"],'poop') !== false){
 		if($lastpoop==null)
 			$lastpoop=$tab[i]["Time"];
 		else{
-			$tab[i]["delta"]=round(abs($strtotime($tab[i]["Time"]) - $strtotime($lastpoop)) / 60,2)
+			$tab[i]["delta"]=round(abs($strtotime($tab[i]["Time"]) - $strtotime($lastpoop)) / 60,2);
 			if($feed!=null)
-				$tab[i]["deltatoactivity"]=round(abs($strtotime($tab[i]["Time"]) - $strtotime($feed)) / 60,2)
+				$tab[i]["deltatoactivity"]=round(abs($strtotime($tab[i]["Time"]) - $strtotime($feed)) / 60,2);
 			$lastpoop=$tab[i]["Time"];
 	}
 }
