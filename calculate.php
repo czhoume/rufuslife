@@ -18,9 +18,9 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
 	echo "<table border=\"1\"><tr><th>Time</th><th>Activity</th></tr>";
     while($row = mysqli_fetch_assoc($result)) {
-    	$tab[count]["Time"]=$row["Time"];
-    	$tab[count]["description"]=$row["description"];
-    	count++;
+    	$tab[$count]["Time"]=$row["Time"];
+    	$tab[$count]["description"]=$row["description"];
+    	$count++;
     }
 } else {
     echo "invalid activity";
@@ -28,7 +28,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
-for($i=0; $i<count; $i++){
+for($i=0; $i<$count; $i++){
 	if(strpos($tab[$i]["description"],'drink') !== false){
 		$drink=$tab[$i]["Time"];
 	}elseif(strpos($tab[$i]["description"],'feed') !== false){
@@ -54,7 +54,7 @@ for($i=0; $i<count; $i++){
 }
 
 echo "<table border=\"1\"><tr><th>Time</th><th>Activity</th><th>Delta</th><th>Deltatoactivity</th></tr>";
-for($i=0; $i<count; $i++){
+for($i=0; $i<$count; $i++){
     	switch ($tab[$i]["description"]) {
     		case "poop outside cube indoor":
     			$bgc="red";
