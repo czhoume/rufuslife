@@ -13,6 +13,13 @@ if (!$conn) {
 }
 $time="2016-1-08 11:23:00";
 $count=0;
+$tab = array
+  (
+  array("Volvo",22,18,0),
+  array("BMW",15,13,0),
+  array("Saab",5,2,0),
+  array("Land Rover",17,15,0)
+  );
 $sql = "SELECT Time, description FROM pprecords LEFT JOIN ppcategory on pprecords.descriptionid= ppcategory.descriptionid WHERE Time > '$time'";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
