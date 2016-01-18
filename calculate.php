@@ -1,16 +1,16 @@
 <?php
-$servername = "us-cdbr-azure-west-c.cloudapp.net";
-$username = "bb69c0b0ab48ed";
-$password = "d9346dec";
-$dbname = "rufuspprecords";
+// $servername = "us-cdbr-azure-west-c.cloudapp.net";
+// $username = "bb69c0b0ab48ed";
+// $password = "d9346dec";
+// $dbname = "rufuspprecords";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+// // Create connection
+// $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+// // Check connection
+// if (!$conn) {
+//     die("Connection failed: " . mysqli_connect_error());
+// }
 // $time="2016-1-08 11:23:00";
 echo "yay";
 // $count=0;
@@ -91,6 +91,6 @@ echo "yay";
 // 		}
 //         echo "<tr bgcolor=".$bgc."><td>" . $tab[$i][0]. "</td><td>" . $tab[$i][1]. "</td><td>" . $tab[$i][2]. "</td><td>" . $tab[$i][3]. "</td></tr>";
 //     }
-mysqli_close($conn);
+// mysqli_close($conn);
 
 ?>
